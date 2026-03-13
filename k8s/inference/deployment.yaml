@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: inference
+  namespace: autocodegens
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: inference
+  template:
+    metadata:
+      labels:
+        app: inference
+    spec:
+      runtimeClassName: nvidia
+      containers:
+      - name: inference
+        image: hamidhrf/autocodegens-inference:latest
+        ports:
+        - containerPort: 5050
+        env:
+        - name: HF_TOKEN
+          valueFrom:
+            secretKeyRef:
+              name: hf-secret
+              key: token
+        resources:
+          limits:
+            nvidia.com/gpu: 1

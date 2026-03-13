@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: code-generator-service
+  namespace: autocodegens
+spec:
+  selector:
+    app: code-generator
+  ports:
+  - port: 4010
+    targetPort: 4010

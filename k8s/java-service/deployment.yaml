@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: code-generator
+  namespace: autocodegens
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: code-generator
+  template:
+    metadata:
+      labels:
+        app: code-generator
+    spec:
+      containers:
+      - name: code-generator
+        image: hamidhrf/autocodegens-java:latest
+        ports:
+        - containerPort: 4010
