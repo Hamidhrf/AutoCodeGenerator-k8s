@@ -74,7 +74,6 @@ cd AutoCodeGenerator-k8s
 ### 2. Build and push images
 
 ```bash
-docker login -u hamidhrf
 
 # Inference service (needs HuggingFace token)
 cd inference_pipeline
@@ -185,7 +184,7 @@ For a full step-by-step guide including NVIDIA driver setup, CRI-O configuration
 
 ## Original Project
 
-This project is based on [AutoCodeGenerator](https://github.com/BhanuPDas/AutoCodeGenerator) by BhanuPDas. All credit for the original application architecture, AI pipeline, and frontend design goes to the original authors.
+This project is based on [AutoCodeGenerator](https://github.com/BhanuPDas/AutoCodeGenerator) by BhanuPDas. All credit for the original application architecture, AI pipeline, and frontend design goes to the original authors.Integrating for K8s for research purpose by Hamidreza Fathollahzadeh at FH Dortmund.
 
 ---
 
